@@ -4,7 +4,7 @@ from django.views import View
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'index.html')
+        return render(request, 'base.html')
 
 
 class VacanciesView(View):
@@ -12,14 +12,14 @@ class VacanciesView(View):
         return render(request, 'vacancies.html')
 
 
-#class VacanciesSpecialtiesView(View):
-#    def get(self, request, cat, frontend):
-#        context = {
-#            'cat': cat,
-#            'frontend': frontend
-#        }
-#        return render(request, 'vacancies.html', context=context)
+class VacanciesSpecialtiesView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'vacancy.html')
 
 class CompaniesView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'companies.html')
+        return render(request, 'company.html')
+
+class VacancyView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'vacancy.html')

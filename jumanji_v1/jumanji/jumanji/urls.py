@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app_jumanji.views import IndexView, VacanciesView, CompaniesView
+from app_jumanji.views import IndexView, VacanciesView, CompaniesView, VacancyView, VacanciesSpecialtiesView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view()),
     path('vacancies/', VacanciesView.as_view(), name='vacancies'),
-#    path('vacancies/<str:cat>/<str:frontend>', VacanciesSpecialtiesView),
-    path('companies/', CompaniesView.as_view(), name='companies'),
+    path('vacancies/cat/frontend/', VacanciesSpecialtiesView.as_view(), name='specialties'),
+    path('companies/345', CompaniesView.as_view(), name='companies'),
+    path('vacancies/22', VacancyView.as_view(), name='vacancy'),
 ]
