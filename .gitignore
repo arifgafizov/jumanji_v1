@@ -4,3 +4,4 @@ __pycache__/
 
 /jumanji_v1/jumanji/static/
 /jumanji_v1/jumanji/specialties/
+/jumanji_v1/jumanji/db.sqlite3
