@@ -44,5 +44,11 @@ class CompaniesView(View):
         return render(request, 'company.html', context=context)
 
 class VacancyView(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'vacancy.html')
+    def get(self, request, id):
+        vacancy = Vacancy.objects.filter(id=id).first()
+        if not vacancy:
+            raise Http404
+        context = {
+            'vacancy': vacancy
+        }
+        return render(request, 'vacancy.html', context=context)

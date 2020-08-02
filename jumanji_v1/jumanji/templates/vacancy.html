@@ -11,13 +11,13 @@
         <section class="pl-3">
           <a href="#"><img src="https://place-hold.it/130x80" width="130" height="80" alt=""></a>
           <div class="d-flex align-items-baseline align-content-baseline">
-            <h1 class="h2 mt-4 font-weight-bold" >Backend-разработчик</h1>
-            <p class="m-0 pl-3">120 000 – 220 000 Р</p>
+            <h1 class="h2 mt-4 font-weight-bold" >{{vacancy.title}}</h1>
+            <p class="m-0 pl-3">{{vacancy.salary_min}} – {{vacancy.salary_max}} Р</p>
           </div>
-          <p class="mt-2">Бэкенд • Средний (Middle) • PHP • PostgreSQL • MySQL • Node.js • Laravel • Symfony • Yii framework • Sails.js • Rabbitmq • Kafka</p>
-          <p class="text-muted mb-4">Primal Assault (15-30 человек), Рязань или удаленно</p>
+          <p class="mt-2">{{vacancy.description}}</p>
+          <p class="text-muted mb-4">{{vacancy.company.name}} ({{vacancy.company.employee_count}} человек), {{vacancy.company.location}} или удаленно</p>
           <div style="line-height: 1.8;">
-            <p>Финтех компаниявходит в международную группу  и занимается развитием факторингового бизнеса. В связи с расширением штата, мы хотим усилить нашу команду Backend-разработчиком, для работы над улучшением продуктов компании.</p>
+            <p>{{vacancy.company.description}}. В связи с расширением штата, мы хотим усилить нашу команду {{vacancy.specialty.title}}ом, для работы над улучшением продуктов компании.</p>
             <p><b>Мы предлагаем: </b><br>
               Оформление по ТК РФ<br>
               ДМС со стоматологией<br>
@@ -34,7 +34,7 @@
             </p>
             <p><b>Кого мы ищем: </b><br>
               Опытного разработчика на C# (от 3х лет)<br>
-              Хорошие знания: ASP.Net MVC, EF CodeFirst, MS SQL, AutoFac (или другой IoC), RabbitMq <br>
+              Хорошие знания: {{vacancy.skills}}<br>
               Навыки проектирования и рефакторинга доменной модели <br>
               git, gitflow, bitBucket, youTrack (или альтернативы)
             </p>
