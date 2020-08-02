@@ -1,10 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 
+from app_jumanji.models import Specialty
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'base.html')
+        context = {
+            'specialties': Specialty.objects.all()
+        }
+        return render(request, 'base.html', context=context)
 
 
 class VacanciesView(View):
