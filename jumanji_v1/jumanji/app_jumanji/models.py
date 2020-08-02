@@ -8,10 +8,12 @@ class Company(models.Model):
     description = models.CharField(max_length=200)
     employee_count = models.IntegerField()
 
+
 class Specialty(models.Model):
     code = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     picture = models.CharField(max_length=200)
+
 
 class Vacancy(models.Model):
     title = models.CharField(max_length=50)

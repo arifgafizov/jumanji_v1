@@ -4,6 +4,7 @@ from django.views import View
 
 from app_jumanji.models import Specialty, Company, Vacancy
 
+
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         context = {
@@ -32,6 +33,7 @@ class VacanciesSpecialtiesView(View):
         }
         return render(request, 'vacancies.html', context=context)
 
+
 class CompaniesView(View):
     def get(self, request, id):
         company = Company.objects.filter(id=id).first()
@@ -44,6 +46,7 @@ class CompaniesView(View):
         }
         return render(request, 'company.html', context=context)
 
+
 class VacancyView(View):
     def get(self, request, id):
         vacancy = Vacancy.objects.filter(id=id).first()
@@ -53,6 +56,7 @@ class VacancyView(View):
             'vacancy': vacancy
         }
         return render(request, 'vacancy.html', context=context)
+
 
 def custom_handler404(request, exception):
     return HttpResponseNotFound("<h1>page not found</h1>")

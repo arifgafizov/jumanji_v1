@@ -1,5 +1,4 @@
 """ Вакансии """
-from models import Specialty
 
 jobs = [
 
@@ -45,19 +44,16 @@ specialties = [
     {"code": "testing", "title": "Тестирование"}
 
 ]
-
-
-#for comp in companies:
-#    company = Company.objects.create(name=comp['title'], location='', description='', employee_count=10)
-
-#for spec in specialties:
+#
+# for comp in companies:
+#   company = Company.objects.create(name=comp['title'], location='', description='', employee_count=10)
+#
+# for spec in specialties:
 #    specialty = Specialty.objects.create(code=spec['code'], title=spec['title'], picture='')
-
-#for job in jobs:
+#
+# for job in jobs:
 #    vacancy = Vacancy.objects.create(title=job['title'], specialty=job['cat'], company=job['company'], skills='',
 #    description=job['desc'], salary_min=job['salary_from'], salary_max=job['salary_to'], published_at=job['posted'])
-
-
 """ Статусы в формате Enum """
 
 #
