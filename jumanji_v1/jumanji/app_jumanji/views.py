@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, Http404
 from django.views import View
 
 from app_jumanji.models import Specialty, Company, Vacancy
@@ -21,8 +21,15 @@ class VacanciesView(View):
 
 
 class VacanciesSpecialtiesView(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'vacancy.html')
+    def get(self, request, code):
+        specialty = Vacancy.objects.filter(specialty__code=code).first()
+        if not specialty:
+            raise Http404
+        context = {
+            'specialty': specialty,
+            'vacancies': Vacancy.objects.all()
+        }
+        return render(request, 'vacancies.html', context=context)
 
 class CompaniesView(View):
     def get(self, request, *args, **kwargs):

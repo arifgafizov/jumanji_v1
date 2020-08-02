@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view()),
     path('vacancies/', VacanciesView.as_view(), name='vacancies'),
-    path('vacancies/cat/frontend/', VacanciesSpecialtiesView.as_view(), name='specialties'),
+    path('vacancies/<str:code>/', VacanciesSpecialtiesView.as_view(), name='specialties'),
     path('companies/345', CompaniesView.as_view(), name='companies'),
     path('vacancies/22', VacancyView.as_view(), name='vacancy'),
 ]
