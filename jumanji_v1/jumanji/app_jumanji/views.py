@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotFound, HttpResponseServerError
 from django.shortcuts import render, Http404
 from django.views import View
 
@@ -52,3 +53,10 @@ class VacancyView(View):
             'vacancy': vacancy
         }
         return render(request, 'vacancy.html', context=context)
+
+def custom_handler404(request, exception):
+    return HttpResponseNotFound("<h1>page not found</h1>")
+
+
+def custom_handler500(request):
+    return HttpResponseServerError("<h1>server error</h1>")
