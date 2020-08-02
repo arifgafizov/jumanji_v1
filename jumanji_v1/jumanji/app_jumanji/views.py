@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
-from app_jumanji.models import Specialty
+from app_jumanji.models import Specialty, Company
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         context = {
-            'specialties': Specialty.objects.all()
+            'specialties': Specialty.objects.all(),
+            'companies': Company.objects.all()
         }
         return render(request, 'base.html', context=context)
 

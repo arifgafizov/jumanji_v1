@@ -4,7 +4,7 @@ from django.db import models
 class Company(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=50)
-    logo = models.Empty()
+    logo = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     employee_count = models.IntegerField()
 
